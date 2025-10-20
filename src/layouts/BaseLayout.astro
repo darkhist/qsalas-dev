@@ -1,0 +1,97 @@
+---
+import Head from "../components/Head.astro";
+import Navigation from "../components/Navigation.astro";
+
+import "../styles/global.css";
+
+type Props = {
+  title: string;
+  description: string;
+};
+
+const { title, description = "A website by Quinn Salas" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="author" content="Quinn Salas" />
+    <meta name="description" content={description} />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://qsalas.dev" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎱</text></svg>"
+    />
+    <Head />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+
+    <header>
+      <Navigation />
+    </header>
+
+    <main id="main-content">
+      <slot />
+    </main>
+
+    <footer>
+      <p>&copy; {new Date().getFullYear()} Quinn Salas</p>
+    </footer>
+  </body>
+</html>
+
+<style>
+  .skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    font-weight: 700;
+    color: var(--mauve);
+    background: var(--mantle);
+    padding: 0.5rem 1rem;
+    z-index: 100;
+    outline-color: var(--peach);
+    text-decoration: none;
+  }
+
+  .skip-link:focus {
+    top: 0;
+  }
+
+  main {
+    padding: 0 var(--space-lg);
+    max-width: var(--content-width-wide);
+    margin: 0 auto;
+    min-height: calc(100vh - 5rem);
+  }
+
+  footer {
+    text-align: center;
+    margin: var(--space-lg) var(--space-sm);
+    color: var(--subtext0);
+    font-size: 0.85rem;
+  }
+
+  footer p {
+    margin: 0;
+  }
+
+  @media screen and (min-width: 768px) {
+    main {
+      padding: 0 var(--space-md);
+    }
+
+    footer {
+      margin: var(--space-xl) var(--space-md);
+    }
+  }
+</style>

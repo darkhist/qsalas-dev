@@ -1,43 +1,37 @@
-# Astro Starter Kit: Minimal
+# qsalas.dev 🎱
 
-```sh
-pnpm create astro@latest -- --template minimal
+> My personal website / blog. Made with [Astro](https://astro.build/)
+
+## Getting Started
+
+1. Clone
+
+```
+git clone https://github.com/darkhist/qsalas-dev.git
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+2. Install
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+```
+pnpm install
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Create -> Preview -> Share
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+1. Create
 
-Any static assets, like images, can be placed in the `public/` directory.
+```
+pnpm new
+```
 
-## 🧞 Commands
+2. Preview
 
-All commands are run from the root of the project, from a terminal:
+```
+pnpm dev
+```
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `pnpm install`             | Installs dependencies                            |
-| `pnpm dev`             | Starts local dev server at `localhost:4321`      |
-| `pnpm build`           | Build your production site to `./dist/`          |
-| `pnpm preview`         | Preview your build locally, before deploying     |
-| `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `pnpm astro -- --help` | Get help using the Astro CLI                     |
+3. Share
 
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+```
+git push origin main
+```

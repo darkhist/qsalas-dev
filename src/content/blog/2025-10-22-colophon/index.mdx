@@ -1,0 +1,46 @@
+---
+title: "Colophon"
+date: "2025-10-22"
+time: "13:20:42"
+description: "Colphon: About This Website"
+---
+
+import { Image } from 'astro:assets';
+
+## About This Site  
+
+I rebuilt this website! Again! This site is a collection of thoughts, memories, and sounds.
+
+## Anaphora?
+In the context of linguistics and [Natural Language Processing (NLP)](https://en.wikipedia.org/wiki/Natural_language_processing),
+anaphora is the concept of using a word to refer back to a preceding word in an expression, for example:
+
+> I really wanted that matcha! It has the perfect shade of green.
+
+In this example, **it** is an _anaphor_, referring back to **that matcha**.
+
+As this blog is a collection of memories, or references to preceding ideas and experiences,
+I thought anaphora was the perfect name.
+
+## Technology
+I made this thing with the [Astro](https://astro.build/) web framework.
+I chose Astro because it's fast, feels familiar, and uses [server-first rendering](https://docs.astro.build/en/concepts/why-astro/#server-first).
+
+This blog is powered by a command-line interface, made possible by [inquirer.js](https://github.com/SBoudrias/Inquirer.js).
+New posts (like this one) are created by running the `pnpm new` command from the Terminal.
+The command runs a custom script that:
+1. Creates a new post folder with a [`.mdx`](https://docs.astro.build/en/guides/integrations-guide/mdx/) file that has post metadata like the title, date, and time
+2. Opens the file in my preferred code editor, ready for me to type whatever nonsense I want
+
+To add photos, I add image files to the respective post folder and 
+reference them in MDX. Images are automatically transformed and optimized, which is very cool.
+
+[Cloudflare Pages](https://pages.cloudflare.com/) automatically deploys the 
+site when new changes are pushed to the [project repository](https://github.com/darkhist/qsalas-dev).
+
+## Design
+Typography: [Inter](https://rsms.me/inter/)  
+Theme: [Catppuccin Mocha](https://catppuccin.com/palette/)
+
+## Thank You
+Thanks for being here. See you around. <span role="img" aria-label="peace sign hand">✌️</span>

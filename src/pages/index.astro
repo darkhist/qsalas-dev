@@ -1,16 +1,40 @@
 ---
-
+import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title="Quinn Salas" description="Quinn is a multi-disciplinary software developer. He loves making technology that is fun and accessible.">
+  <h1>Quinn Salas</h1>
+  
+  <div class="about">
+    <p>
+      I'm a software developer, doing my best to create beautiful, delightful,
+      and accessible technology.
+    </p>
+
+    <p>
+      Right now, I'm having fun building web and mobile apps,
+      improving automation tools, and learning new things.
+    </p>
+
+    <p>
+      This site might be a social experiment.
+      All views expressed here are my own.
+    </p>
+    
+    <p>
+      I'm glad you're here <span role="img" aria-label="smiling cowboy">🤠</span>
+    </p>
+
+    <p>
+      <a href="https://github.com/darkhist/qsalas-dev">View Page Source</a>
+      <span aria-hidden="true">·</span>
+      <a href="mailto:hi@qsalas.dev">Say Hello</a>
+    </p>
+  </div>
+</BaseLayout>
+
+<style>
+  .about {
+    max-width: 30rem;
+  }
+</style>
