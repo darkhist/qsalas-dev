@@ -1,0 +1,75 @@
+---
+const currentPath = Astro.url.pathname;
+
+const links = [
+  { href: "/", label: "Home" },
+  { href: "/blog", label: "Blog" },
+];
+---
+
+<nav>
+  <div class="nav-container">
+    <div class="nav-links">
+      {
+        links.map((link) => (
+          <a
+            href={link.href}
+            class:list={[
+              "nav-link",
+              {
+                active:
+                  link.href === "/"
+                    ? currentPath === "/"
+                    : currentPath.startsWith(link.href),
+              },
+            ]}
+          >
+            {link.label}
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</nav>
+
+<style>
+  .nav-container {
+    max-width: var(--content-width-wide);
+    padding: calc(2 * var(--space-lg)) calc(var(--space-lg) - 8px) 1.25rem
+      calc(var(--space-lg) - 8px);
+    margin: 0 auto;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: var(--space-xs);
+  }
+
+  .nav-link {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 0.5rem;
+    transition: all 0.2s ease;
+  }
+
+  .nav-link:hover {
+    color: var(--peach);
+    border-bottom-color: var(--peach);
+  }
+
+  .nav-link.active {
+    font-weight: 600;
+    text-decoration: underline;
+    color: var(--peach);
+    border-bottom-color: var(--peach);
+  }
+
+  .nav-link:focus {
+    outline: none;
+  }
+
+  .nav-link:focus-visible {
+    box-shadow: 0 0 0 2px var(--peach);
+  }
+</style>

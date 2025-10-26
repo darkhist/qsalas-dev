@@ -1,0 +1,123 @@
+---
+title: "Making music videos with ffmpeg"
+date: "2020-11-16"
+time: "09:07:53"
+description: "A tutorial on using the ffmpeg command-line utility to merge audio and video files"
+---
+
+## TLDR
+
+I watch a bunch of music videos on YouTube. You know the kind, infinitely-looping anime GIFs paired with slowed + reverb songs. I had some GIFs and MP3 files laying around, so I decided to use [ffmpeg](https://ffmpeg.org/) to combine them and create my own music videos. Read on for the full tutorial :-)
+
+## Getting Started
+
+Before we get started, I want to note that I’m using a MacBook Pro running OSX Mojave 10.14.5. If you’re using a different operating system, you can install ffmpeg by [visiting their download page](https://ffmpeg.org/download.html)
+
+### Installing Homebrew
+
+We’ll be using [Homebrew](https://brew.sh/), the popular package manager for Mac OS, to install ffmpeg
+
+Open your Terminal to get started, and run the following command to get Homebrew if you don't already have it
+
+```bash
+/usr/bin/ruby -e "$(curl -fsSL
+https://raw.githubusercontent.com/Homebrew/install/master/install)"
+```
+
+### Installing ffmpeg
+
+Once Homebrew has been installed, you can get ffmpeg by running
+
+```bash
+brew install ffmpeg
+```
+
+To verify the install, you can run
+
+```bash
+which ffmpeg
+```
+
+You should see `/usr/local/bin/ffmpeg`
+
+## Creating a Music Video
+
+Make sure you have a GIF and MP3 file saved in the same folder on your computer. I put my files in a `Documents/music` folder, but you can save them wherever you want
+
+Navigate to the folder where your files are located
+
+In my case, I would run
+
+```bash
+cd Documents/music
+```
+
+Run the following command to create a music video
+
+```bash
+ffmpeg \ -i song.mp3 \ -stream_loop -1 \ -i gif.gif \ -codec:v libx264 \
+-preset slow \ -tune animation \ -codec:a aac \ -pix_fmt yuv420p \ -shortest \
+mv.mp4
+```
+
+Replace `song.mp3` and `gif.gif` with the names of your respective files
+
+I named my output file `mv.mp4`, but you can name yours whatever you’d like. After the video is created, it will be automatically saved to the current directory
+
+To play the video, run the following command and marvel at your creation
+
+```bash
+open mv.mp4
+```
+
+## Command Breakdown
+
+`ffmpeg`: Invokes the ffmpeg program
+
+`-i song.mp3`: Indicates that the provided MP3 file will be used as an input
+
+`-stream_loop -1`: Sets the number of times an input should be looped. In our case, we want our GIF to loop forever, so we set the loop count to -1
+
+`-i gif.gif`: Indicates that the provided GIF file will also be used as an input
+
+`-codec:v libx264`: Specifies that we want to use the libx264 library to compress our GIF with the H.264 codec. H.264 is a fancy video compression tool which is used to shrink the file size of a video while retaining as much quality as possible. H.264 uses cool compression techniques like chroma subsampling and motion compensation, which we won’t get into today, but if you’re interested in learning more, I highly recommend checking out [this blog post by Sid Bala](https://sidbala.com/h-264-is-magic/)
+
+`-preset slow`: This setting changes the video encoding speed, which changes the compression of our video. Video encoding is a CPU-intensive task, so a slower encoding speed takes longer, but will give us a higher quality video. Feel free to experiment with other preset options
+
+`-tune animation`: This option changes the video encoding settings based on the type of input we’re using. In my case, I used a GIF from Perfect Blue, so `animation` seemed like the best choice
+
+`-codec:a aac`: Specifies that we’d like to use AAC for audio encoding. AAC is a popular audio encoder, and generally achieves better sound quality compared to MP3 files
+
+`pix_fmt yuv420p`: Specifies that the [YUV](https://en.wikipedia.org/wiki/YUV) pixel format should be used for our music video. YUV is a special color space, similar to RGB, and allows our video to be played with QuickTime and other video players
+
+`-shortest`: Ensures that the music video duration matches the length of the song
+
+`mv.mp4`: The name of the output file
+
+## Closing Remarks
+
+Have fun and make some cool stuff!
+
+See you later :-)
+
+## Resources
+
+[ffmpeg Docs](https://ffmpeg.org/ffmpeg.html)
+
+[H.264 Encoding Guide](https://trac.ffmpeg.org/wiki/Encode/H.264)
+
+[ffmpeg Commands: 31 Must-Haves for Beginners in 2022](https://www.videoproc.com/resource/ffmpeg-commands.htm) (shout out to Sven)
+
+## Fair Use Disclaimer
+
+Fair use for online videos is a little complicated, but I would **strongly** recommend against publishing music videos if you're repurposing an entire track
+
+From [Code of Best Practices in Fair Use for Online Video](https://cmsimpact.org/code/code-best-practices-fair-use-online-video/):
+
+> fair use will not apply when a copyrighted song is used in its entirety as a sound track for a newly created video simply because the music evokes a desired mood rather than to change its meaning
+
+This article was written in good faith and is only intended to offer an educational introduction to using the ffmpeg CLI
+
+I do not claim to own the rights to any material used while following this tutorial
+
+Please refer to the latest fair use guidelines

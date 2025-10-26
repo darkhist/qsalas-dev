@@ -1,0 +1,39 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout
+  title="404 NOT FOUND"
+  description="The page you are looking for could not be found"
+>
+  <h1>Oh shit</h1>
+  <p>The page you're looking for could not be found or doesn't exist yet.</p>
+
+  <a href="/" class="back-link">
+    <span aria-hidden="true">&#x2190;</span>
+    Back to Home
+  </a>
+
+  <figure>
+    <pre
+      aria-hidden="true">
+ -----------------
+{`< have a good day >`}
+ -----------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
+  </pre>
+    <figcaption class="sr-only">
+      ASCII art of a cow saying, "Have a good day!"
+    </figcaption>
+  </figure>
+</BaseLayout>
+
+<style>
+  figure {
+    margin-top: calc(2 * var(--space-xl));
+  }
+</style>
