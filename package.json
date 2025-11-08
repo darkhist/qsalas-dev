@@ -2,6 +2,7 @@
   "name": "qsalas.dev",
   "type": "module",
   "version": "1.0.0",
+	"license": "MIT",
   "scripts": {
     "new": "node scripts/new.js",
     "dev": "astro dev",
