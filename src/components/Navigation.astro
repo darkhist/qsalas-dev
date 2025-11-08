@@ -53,10 +53,6 @@ const links = [
     transition: all 0.2s ease;
   }
 
-  .nav-link:first-of-type {
-    padding-left: 0;
-  }
-
   .nav-link:hover {
     color: var(--peach);
     border-bottom-color: var(--peach);
@@ -75,5 +71,11 @@ const links = [
 
   .nav-link:focus-visible {
     box-shadow: 0 0 0 2px var(--peach);
+  }
+
+  @media screen and (min-width: 768px) {
+    .nav-container {
+      padding: calc(2 * var(--space-lg)) var(--space-sm) 1.25rem var(--space-sm);
+    }
   }
 </style>
