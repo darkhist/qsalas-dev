@@ -1,6 +1,9 @@
 import { writeFileSync, mkdirSync } from "node:fs";
-import { input, editor, confirm } from "@inquirer/prompts";
 import path from "node:path";
+import { loadEnvFile } from "node:process";
+import { input, editor, confirm } from "@inquirer/prompts";
+
+loadEnvFile();
 
 const slugify = (text) =>
   text
@@ -44,7 +47,7 @@ const publish = await confirm({ message: "Publish?" });
 const folderName = `${date}-${slug}`;
 const destination = publish
   ? path.join("src/content/blog", folderName)
-  : path.join(process.env.HOME, "Documents/blog/drafts", folderName);
+  : path.join(process.env.HOME, process.env.DRAFT_PATH, folderName);
 
 mkdirSync(destination, { recursive: true });
 
