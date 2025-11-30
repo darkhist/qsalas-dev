@@ -17,7 +17,7 @@ const title = await input({ message: "What should I call this thought?" });
 
 const slug = slugify(title);
 const now = new Date();
-const date = now.toISOString().split("T")[0]; // YYYY-MM-DD
+const date = now.toLocaleDateString("en-CA"); // YYYY-MM-DD
 const timestamp = now.toLocaleTimeString("en-US", {
   hourCycle: "h23",
   hour: "2-digit",
@@ -54,4 +54,4 @@ mkdirSync(destination, { recursive: true });
 const filePath = path.join(destination, "index.mdx");
 writeFileSync(filePath, content, { encoding: "utf-8" });
 
-console.log(`\n🧙 Created new post at ${filePath}\n`);
+console.log(`\n🧙 Created new post at ${destination}\n`);
