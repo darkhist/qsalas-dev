@@ -5,14 +5,15 @@ time: "20:20:36"
 description: "A list of tools I use everyday, including: home office products, my favorite web browsers, apps for music and notes, and software development tools"
 ---
 
-import { Image } from 'astro:assets';
+import Img from "../../../components/Img.astro";
 
-import k6 from './k6.jpeg';
-import deskFriends from './desk-friends.jpeg';
+import k6 from "./k6.jpeg";
+import deskFriends from "./desk-friends.jpeg";
 
 These are **NOT** affiliate links - just sharing what keeps me productive <span role="img" aria-label="smiley face">:-)</span>
 
 ## Office
+
 - Desk: [Jarvis Bamboo Standing Desk](https://store.hermanmiller.com/standing-desks/jarvis-bamboo-standing-desk/2542428.html?lang=en_US)
 - Chair: [Steelcase Gesture](https://store.steelcase.com/gesture)
 - Computer: 2019 Apple MacBook Pro
@@ -23,7 +24,8 @@ These are **NOT** affiliate links - just sharing what keeps me productive <span 
 - Storage: [Samsung T7 2TB SSD](https://www.bhphotovideo.com/c/product/1559839-REG/samsung_mu_pc2t0t_am_2tb_t7_portable_ssd.html/)
 - Deskmates: Smiski, Maneki-neko, rainbow alpaca
 
-## Software 
+## Software
+
 - Browser: [Brave](https://brave.com/), sometimes [Arc](https://arc.net/) or [Firefox](https://www.firefox.com/en-US/landing/get/)
 - Music: [Spotify](https://open.spotify.com/user/qmsalas321), [SoundCloud](https://soundcloud.com/quinn-salas), YouTube
 - Notes: [Notion](https://www.notion.com/), Apple Notes
@@ -31,6 +33,7 @@ These are **NOT** affiliate links - just sharing what keeps me productive <span 
 - AI: [Claude](https://claude.com/product/overview)
 
 ## Development
+
 - Editors: [Vim](https://www.vim.org/), [Visual Studio Code](https://code.visualstudio.com/)
 - Terminal: [Ghostty](https://ghostty.org/)
 - Theme: [Catppuccin Mocha](https://catppuccin.com/palette/)
@@ -39,5 +42,11 @@ These are **NOT** affiliate links - just sharing what keeps me productive <span 
 - Domains and Hosting: [Cloudflare](https://www.cloudflare.com/)
 - Tech: React, React Native, TypeScript, Node.js, C#
 
-<Image src={k6} alt="Keychron K6 mechanical keyboard with cream alpha keycaps and multicolored accent keys" />
-<Image src={deskFriends} alt="Waving Maneki-neko cat, small figurine of a person putting on a sweater, felt and wire alpaca keychain - surrounded by jumbled cables" />
+<Img
+  src={k6}
+  alt="Keychron K6 mechanical keyboard with cream alpha keycaps and multicolored accent keys"
+/>
+<Img
+  src={deskFriends}
+  alt="Waving Maneki-neko cat, small figurine of a person putting on a sweater, felt and wire alpaca keychain - surrounded by jumbled cables"
+/>

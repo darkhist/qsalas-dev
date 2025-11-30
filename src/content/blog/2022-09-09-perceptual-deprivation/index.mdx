@@ -5,12 +5,12 @@ time: "01:42:42"
 description: "A pink and purple gradient psuedo-ganzfeld programmatically created with the p5.js library, paired with Unconditional Beauty by Luigi Madonna"
 ---
 
-import { Image } from "astro:assets";
+import Img from "../../../components/Img.astro";
 import ganzfeldOne from "./ganzfeldone.png";
 
 [Luigi Madonna - Unconditional Beauty](https://open.spotify.com/track/48CueGtLgYtdN5WUXeL94G?si=0621c926c5484017)
 
-<Image
+<Img
   src={ganzfeldOne}
   alt="dark purple background accompanied by a blurred pink rectangle in the center"
 />

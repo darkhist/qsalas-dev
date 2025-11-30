@@ -5,7 +5,10 @@ time: "23:38:24"
 description: "Reflections at the MOMA in NYC"
 ---
 
-import { Image } from 'astro:assets';
-import IMG_1369 from './IMG_1369.jpeg';
+import Img from "../../../components/Img.astro";
+import IMG_1369 from "./IMG_1369.jpeg";
 
-<Image src={IMG_1369} alt="A dozen New York City skyscrapers viewed through a window at the MOMA featuring the shadowy reflections of three strangers" />
+<Img
+  src={IMG_1369}
+  alt="A dozen New York City skyscrapers viewed through a window at the MOMA featuring the shadowy reflections of three strangers"
+/>

@@ -5,14 +5,19 @@ time: "21:56:59"
 description: "Working late"
 ---
 
-import { Image } from "astro:assets";
+import Img from "../../../components/Img.astro";
 import IMG_3098 from "./IMG_3098.jpg";
 
 cutting my teeth
 
-<span role="img" aria-label="Replacement character, white rombus with black question mark">�</span>
+<span
+  role="img"
+  aria-label="Replacement character, white rombus with black question mark"
+>
+  �
+</span>
 
-<Image
+<Img
   src={IMG_3098}
   alt="A half-open MacBook Pro in the dark, emitting blue and purple light from the screen"
 />
