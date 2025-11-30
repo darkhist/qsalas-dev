@@ -31,3 +31,12 @@ src/content/blog/*.mdx
 
 # index
 src/pages/index.astro
+
+# images
+*.jpeg
+*.jpg
+*.png
+*.webp
+*.avif
+*.gif
+*.svg
