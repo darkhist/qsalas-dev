@@ -1,16 +1,17 @@
 {
   "name": "qsalas.dev",
   "type": "module",
-  "version": "1.0.0",
-	"license": "MIT",
+  "version": "1.0.1",
+  "license": "MIT",
   "scripts": {
     "new": "node scripts/new.js",
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
+    "prod": "astro build && astro preview",
     "astro": "astro",
-    "format": "prettier --write .",
-    "format:check": "prettier --check ."
+    "fmt": "prettier --write .",
+    "fmt:dry": "prettier --check ."
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.7",
