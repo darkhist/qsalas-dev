@@ -29,9 +29,6 @@ TODO.md
 # content
 src/content/blog/*.mdx
 
-# index
-src/pages/index.astro
-
 # images
 *.jpeg
 *.jpg

@@ -2,33 +2,42 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout title="Quinn Salas" description="Quinn is a multi-disciplinary software developer. He loves making technology that is fun and accessible.">
+<BaseLayout
+  title="Quinn Salas"
+  description="Quinn is a multi-disciplinary software engineer. He loves making technology that is fun and accessible."
+>
   <h1>Quinn Salas</h1>
-  
+
   <div class="about">
     <p>
-      I'm a software developer, doing my best to create beautiful, delightful,
-      and accessible technology.
+      Hi! I'm Quinn. I'm a software engineer, doing my best to create beautiful,
+      delightful, and accessible technology.
     </p>
 
     <p>
-      Right now, I'm having fun building web and mobile apps,
-      improving automation tools, and learning new things.
+      Right now, I'm having fun building web and mobile apps, improving
+      distributed systems, and learning new things.
     </p>
 
     <p>
-      This site might be a social experiment.
-      All views expressed here are my own.
-    </p>
-    
-    <p>
-      I'm glad you're here <span role="img" aria-label="smiling cowboy">🤠</span>
+      This site might be a social experiment. All views expressed here are my
+      own.
     </p>
 
     <p>
-      <a href="https://github.com/darkhist/qsalas-dev">View Page Source</a>
-      <span aria-hidden="true">·</span>
-      <a href="mailto:hi@qsalas.dev">Say Hello</a>
+      I'm glad you're here <span role="img" aria-label="smiling cowboy">🤠</span
+      >
+    </p>
+
+    <p>
+      <a
+        href="https://github.com/darkhist/qsalas-dev"
+        rel="noopener noreferrer"
+      >
+        View Page Source
+      </a>
+      <span class="dot" aria-hidden="true">·</span>
+      <a href="mailto:hi@qsalas.dev" rel="noopener noreferrer">Say Hello</a>
     </p>
   </div>
 </BaseLayout>
@@ -36,5 +45,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 <style>
   .about {
     max-width: 30rem;
+  }
+
+  .dot {
+    margin: 0 0.5rem;
   }
 </style>
