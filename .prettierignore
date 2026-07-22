@@ -1,6 +1,9 @@
 # build output
 dist/
 
+# lockfiles
+pnpm-lock.yaml
+
 # generated types
 .astro/
 
@@ -27,7 +30,7 @@ pnpm-debug.log*
 TODO.md
 
 # content
-src/content/blog/*.mdx
+src/content/blog/**/*.mdx
 
 # images
 *.jpeg

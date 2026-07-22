@@ -3,15 +3,17 @@
   "type": "module",
   "version": "1.1.0",
   "license": "MIT",
+  "packageManager": "pnpm@11.15.1",
   "scripts": {
     "new": "node scripts/new.js",
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "prod": "astro build && astro preview",
+    "serve": "astro build && astro preview",
     "astro": "astro",
     "fmt": "prettier --write .",
-    "fmt:dry": "prettier --check ."
+    "fmt:check": "prettier --check .",
+    "typecheck": "astro check"
   },
   "dependencies": {
     "@astrojs/mdx": "^7.0.3",
@@ -20,7 +22,9 @@
     "sharp": "^0.34.5"
   },
   "devDependencies": {
+    "@astrojs/check": "^0.9.4",
     "prettier": "^3.8.1",
-    "prettier-plugin-astro": "^0.14.1"
+    "prettier-plugin-astro": "^0.14.1",
+    "typescript": "^5.7.3"
   }
 }
