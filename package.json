@@ -8,10 +8,10 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "prod": "astro build && astro preview",
+    "serve": "astro build && astro preview",
     "astro": "astro",
     "fmt": "prettier --write .",
-    "fmt:dry": "prettier --check .",
+    "fmt:check": "prettier --check .",
     "typecheck": "astro check"
   },
   "dependencies": {
