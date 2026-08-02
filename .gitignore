@@ -23,5 +23,8 @@ pnpm-debug.log*
 # vscode settings
 .vscode/
 
+# claude settings
+.claude/settings.local.json
+
 # todos
 TODO.md
